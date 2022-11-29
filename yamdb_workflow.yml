@@ -30,8 +30,7 @@ jobs:
       run: |
         # запуск проверки проекта по flake8
         python -m flake8
-        cd ../
-        pytest
+        python -m pytest
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -54,7 +53,6 @@ jobs:
         # Пуш образа в Docker Hub 
         uses: docker/build-push-action@v2 
         with:
-          file: ../api_yamdb/Dockerfile
           push: true
           tags: lojiver/yamdb:latest
   deploy:
