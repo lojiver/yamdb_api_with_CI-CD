@@ -6,7 +6,7 @@ COPY api_yamdb/requirements.txt /app
 
 RUN pip3 install -r /app/requirements.txt --no-cache-dir
 
-COPY yamdb_final/ /app
+COPY ./ /app
 
 WORKDIR /app
 
